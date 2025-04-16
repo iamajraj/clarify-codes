@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarify - See Your Code & Team Dynamics Clearly | M. Raj</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clr-cream: #FAF8F1; /* Light Cream */
+            --clr-dark-text: #1f2937; /* Gray 800 */
+            --clr-accent: #4338ca; /* Indigo 700 */
+            --clr-accent-light: #6366f1; /* Indigo 500 */
+            --clr-accent-lighter: #e0e7ff; /* Indigo 100 */
+            --clr-footer-text: #c7d2fe; /* Indigo 200 for footer text */
+            --clr-footer-link-hover: #ffffff; /* White for footer link hover */
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--clr-cream);
+            color: var(--clr-dark-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .btn-glow-indigo {
+            box-shadow: 0 0 15px 3px rgba(99, 102, 241, 0.4);
+        }
+        .creative-placeholder {
+            background-color: #e5e7eb; /* Gray 200 */
+            border: 2px dashed #d1d5db; /* Gray 300 */
+            border-radius: 0.75rem; /* rounded-xl */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 300px;
+            padding: 1rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .step-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .step-icon-wrapper {
+             width: 4rem;
+             height: 4rem;
+             border-radius: 9999px;
+             display: inline-flex;
+             align-items: center;
+             justify-content: center;
+             margin-bottom: 1.5rem;
+             background-color: var(--clr-accent-lighter);
+             color: var(--clr-accent);
+        }
+        .step-icon-wrapper svg {
+             width: 2rem;
+             height: 2rem;
+        }
+         /* Specific styling for the footer */
+        .footer {
+             background-color: var(--clr-accent);
+             color: var(--clr-footer-text);
+        }
+        .footer-link {
+             color: var(--clr-footer-text);
+             transition: color 0.2s ease-in-out;
+        }
+        .footer-link:hover {
+             color: var(--clr-footer-link-hover);
+        }
+
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header Navigation -->
+    <header class="absolute top-0 left-0 w-full z-50 py-5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 tracking-tight">
+                Clarify<span class="text-gray-700 font-medium">.codes</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-200">Features</a>
+                <a href="#how" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-200">How it Works</a>
+                <a href="#pricing" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-200">Pricing</a>
+            </nav>
+            <div>
+                <a href="#" class="bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-800 transition duration-200 ease-in-out shadow-sm hover:shadow-md btn-glow-indigo">
+                    Get Started (Demo)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Asymmetric -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
+         <!-- Decorative background shape -->
+         <div class="absolute top-0 right-0 -mt-20 -mr-40 w-96 h-96 bg-indigo-100 rounded-full opacity-30 blur-3xl pointer-events-none" aria-hidden="true"></div>
+         <div class="absolute bottom-0 left-0 -mb-20 -ml-40 w-80 h-80 bg-indigo-100 rounded-full opacity-30 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+            <!-- Text Content -->
+            <div class="text-center md:text-left">
+                <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 tracking-wide">From Metadata to Meaning</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-5 leading-tight tracking-tighter">
+                    Navigate Your Code & Team With <span class="text-indigo-600">Clarity</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-xl mx-auto md:mx-0">
+                    Stop relying on gut feelings. Clarify transforms your Git history into objective, actionable insights about collaboration, codebase health, and potential risks.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="bg-indigo-700 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-800 transition duration-200 ease-in-out shadow-lg hover:shadow-xl btn-glow-indigo inline-block w-full sm:w-auto">
+                        Get Started Free
+                    </a>
+                     <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold text-lg group inline-flex items-center">
+                        View Demo
+                        <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                 </div>
+                 <p class="text-sm text-gray-500 mt-6">Secure GitHub OAuth • Insights without code access</p>
+            </div>
+
+            <!-- Visual Placeholder -->
+            <div class="relative h-full flex items-center justify-center mt-10 md:mt-0">
+                <div class="creative-placeholder w-full max-w-md transform md:rotate-3 hover:rotate-0 transition duration-300 shadow-xl bg-white">
+                    <svg class="w-16 h-16 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a4 4 0 00-5.656 0M4.572 8.572a4 4 0 000 5.656m11.142-8.485a4 4 0 00-5.656 0M4.572 16.97a4 4 0 010-5.656M18 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
+                     <span class="font-semibold">Visualizing Connections</span>
+                     <p>Interactive graphs show team dynamics & code hotspots. (Actual visuals coming soon!)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Feeling Lost in the Commits?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                   Managing engineering teams means navigating complexity. Clarify helps you pinpoint the real issues hidden within your development workflow data.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="text-center p-6 group">
+                     <div class="inline-flex items-center justify-center w-16 h-16 mb-5 bg-indigo-100 text-indigo-500 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                     </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Invisible Teamwork</h3>
+                    <p class="text-gray-600">Collaboration patterns and knowledge silos remain hidden, hindering flow and increasing risk.</p>
+                </div>
+                 <!-- Card 2 -->
+                <div class="text-center p-6 group">
+                    <div class="inline-flex items-center justify-center w-16 h-16 mb-5 bg-indigo-100 text-indigo-500 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Codebase Complexity</h3>
+                    <p class="text-gray-600">Identifying high-churn areas, tech debt hotspots, and unstable modules feels like guesswork.</p>
+                </div>
+                 <!-- Card 3 -->
+                <div class="text-center p-6 group">
+                     <div class="inline-flex items-center justify-center w-16 h-16 mb-5 bg-indigo-100 text-indigo-500 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Shallow Metrics</h3>
+                    <p class="text-gray-600">Simple commit counts don't capture true activity, impact, or potential burnout risks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white rounded-t-[3rem] md:rounded-t-[5rem] relative z-10">
+        <div class="container mx-auto px-6">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Unlock Objective Insights</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">Clarify provides focused visualizations and metrics derived purely from Git metadata.</p>
+                 <p class="mt-2 font-semibold text-indigo-600">Your source code is never accessed.</p>
+            </div>
+             <!-- Feature Cards... -->
+             <!-- Feature 1: Collaboration -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center mb-20 md:mb-28">
+                <div class="md:col-span-2 order-2 md:order-1">
+                    <span class="text-indigo-600 font-semibold uppercase tracking-wider text-sm">Team Dynamics</span>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-1 mb-3">Map Your Collaboration Flow</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">See the invisible network of how your team truly interacts. Identify key collaborators, potential knowledge silos, and communication bottlenecks through an interactive graph based on commit/PR data.</p>
+                </div>
+                <div class="md:col-span-3 order-1 md:order-2">
+                    <div class="creative-placeholder shadow-lg p-6">
+                         <svg class="w-16 h-16 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span class="font-semibold">[Visual Placeholder: Clean, interactive network graph showing connections]</span>
+                         <p>Visualize links between developers and code modules.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Feature 2: Hotspots -->
+             <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center mb-20 md:mb-28">
+                <div class="md:col-span-3">
+                     <div class="creative-placeholder shadow-lg p-6">
+                        <svg class="w-16 h-16 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10H7a2 2 0 00-2 2v1a2 2 0 002 2h2v1a2 2 0 002 2h1.172a2 2 0 001.414-.586l2.828-2.828A8 8 0 0117.657 18.657zM9.343 17.657A8 8 0 0118.657 8.343S18 10 16 11h2a2 2 0 012 2v1a2 2 0 01-2 2h-2v1a2 2 0 01-2 2h-1.172a2 2 0 01-1.414-.586l-2.828-2.828A8 8 0 019.343 17.657z"></path></svg>
+                         <span class="font-semibold">[Visual Placeholder: Treemap or heatmap indicating file churn/complexity]</span>
+                         <p>Identify high-activity areas needing attention.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <span class="text-indigo-600 font-semibold uppercase tracking-wider text-sm">Codebase Health</span>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-1 mb-3">Spot Codebase Hotspots</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">Discover which files and modules experience the most frequent changes (churn). High churn often correlates with complexity, instability, or critical business logic concentration.</p>
+                </div>
+            </div>
+
+             <!-- Feature 3: Trends -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center">
+                <div class="md:col-span-2 order-2 md:order-1">
+                    <span class="text-indigo-600 font-semibold uppercase tracking-wider text-sm">Activity Patterns</span>
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-1 mb-3">Track Meaningful Trends</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">Go beyond vanity metrics. Understand contribution distribution, analyze activity levels over time, and gain objective insights into team velocity and potential burnout risks.</p>
+                </div>
+                 <div class="md:col-span-3 order-1 md:order-2">
+                     <div class="creative-placeholder shadow-lg p-6">
+                         <svg class="w-16 h-16 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                         <span class="font-semibold">[Visual Placeholder: Clean line charts and bar charts showing activity over time]</span>
+                        <p>Visualize commit volume, author distribution, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Security Section -->
+    <section id="how" class="py-20 relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-indigo-50">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Simple Steps, Secure Process</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">Get valuable insights quickly and safely. Our streamlined process respects your data privacy.</p>
+            </div>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                 <!-- Step Cards... -->
+                 <!-- Step 1 Card -->
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                        <!-- Icon: Link / OAuth -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Connect Securely</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Authorize via standard GitHub OAuth with read-only permissions for metadata. No code access needed.</p>
+                </div>
+
+                <!-- Step 2 Card -->
+                 <div class="step-card md:transform">
+                    <div class="step-icon-wrapper bg-indigo-600 text-white"> <!-- Highlight middle icon -->
+                        <!-- Icon: Shield / Security -->
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Metadata-Only Analysis</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed"><strong class="text-indigo-700">Your code stays yours.</strong> We process commit data, file paths, and PR info – never the actual source code content.</p>
+                </div>
+
+                 <!-- Step 3 Card -->
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                       <!-- Icon: Chart / Insights -->
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 013 21v-7.875zM12.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v12.75c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0112.75 21V8.625zM21 4.125c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v17.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0121 21.375V4.125z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Visualize Insights</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Explore intuitive dashboards and graphs that reveal clear patterns about your team and codebase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+     <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Generous Free Tier. Simple Pricing.</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Start gaining clarity today. Our free plan provides core features for teams up to 15 contributors.
+                </p>
+            </div>
+             <div class="max-w-md mx-auto bg-gradient-to-br from-indigo-50 to-white rounded-xl shadow-xl p-8 border border-indigo-100 ring-1 ring-indigo-100">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">Free Plan</h3>
+                 <p class="text-5xl font-extrabold text-gray-900 mb-4">$0</p>
+                 <p class="text-gray-600 mb-6">Essential insights for growing teams.</p>
+                 <ul class="text-gray-700 space-y-3 mb-8 text-left text-sm">
+                      <!-- Feature List Items -->
+                    <li class="flex items-center">
+                         <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Up to <span class="font-semibold mx-1">15 Active Contributors</span>
+                    </li>
+                     <li class="flex items-center">
+                         <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Unlimited Public & Private Repos
+                    </li>
+                    <li class="flex items-center">
+                         <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Collaboration Graph Insights
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                         Codebase Hotspot Analysis
+                    </li>
+                    <li class="flex items-center">
+                         <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                         Team Activity Trends
+                    </li>
+                 </ul>
+                 <a href="#" class="block w-full bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition duration-200 ease-in-out shadow-md hover:shadow-lg btn-glow-indigo">
+                    Start Free Today
+                </a>
+            </div>
+             <p class="mt-8 text-gray-500 text-sm">Paid plans with advanced features & unlimited contributors coming soon.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20" style="background-color: var(--clr-accent);">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-5 tracking-tight">Ready to See Clearly?</h2>
+                <p class="text-lg text-indigo-200 mb-10 leading-relaxed">
+                    Join the early access list for Clarify. Transform your Git data into your most valuable asset for understanding your team and code.
+                </p>
+                 <a href="#" class="bg-white text-indigo-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition duration-200 ease-in-out shadow-lg hover:shadow-xl inline-block"> <!-- Contrasting button -->
+                    Request Early Access Now
+                </a>
+                 <p class="text-xs text-indigo-300 mt-4">(Links above start the interactive demo flow)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-8">
+        <div class="container mx-auto px-6 text-center">
+             <div class="text-lg font-semibold text-indigo-100 mb-3">
+                Clarify<span class="text-indigo-300 font-medium">.codes</span>
+            </div>
+            <div class="text-xs space-x-5 mb-3">
+                 <a href="#features" class="footer-link">Features</a>
+                 <a href="#pricing" class="footer-link">Pricing</a>
+                 <a href="#" class="footer-link">Privacy</a>
+                 <a href="#" class="footer-link">Terms</a>
+                 <a href="mailto:hello@clarify.codes" class="footer-link">Contact</a>
+            </div>
+            <p class="text-xs text-indigo-300">© 2025 ClarifyCodes. All rights reserved. | <a target="_blank" href="https://github.com/iamajraj">M. Raj</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
