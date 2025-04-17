@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding | Clarify | M. Raj</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        :root { /* Use same variables */
+             --clr-cream: #FAF8F1; --clr-accent: #4338ca; --clr-accent-light: #6366f1;
+             --clr-accent-lighter: #e0e7ff;
+        }
+         body { font-family: 'Inter', sans-serif; background-color: var(--clr-cream); }
+        [x-cloak] { display: none !important; }
+        .repo-card { background: white; border-radius: 0.75rem; padding: 1rem 1.5rem; border: 1px solid #e5e7eb; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; display: flex; justify-content: space-between; align-items: center; }
+        .repo-card.selected { border-color: var(--clr-accent); box-shadow: 0 0 0 2px var(--clr-accent-lighter); }
+        .btn-glow-indigo { box-shadow: 0 0 15px 3px rgba(99, 102, 241, 0.4); }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-6"
+      x-data="{
+          availableRepos: [
+              { id: 1, name: 'My Awesome Project', owner: 'my-org', selected: false },
+              { id: 2, name: 'Akmal Internal Tool', owner: 'my-org', selected: false },
+              { id: 3, name: 'Website Revamp Q3', owner: 'my-org', selected: false },
+              { id: 4, name: 'Legacy System Maintenance', owner: 'my-org', selected: false },
+              { id: 5, name: 'Mobile App v2', owner: 'my-org', selected: false }
+          ],
+          toggleSelection(repoId) {
+              const repo = this.availableRepos.find(r => r.id === repoId);
+              if (repo) repo.selected = !repo.selected;
+          },
+          get selectedCount() {
+              return this.availableRepos.filter(r => r.selected).length;
+          }
+      }">
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-2xl w-full">
+        <div class="text-center mb-8">
+             <span class="text-3xl font-bold text-indigo-700 tracking-tight">
+                 Clarify<span class="text-gray-700 font-medium">.codes</span>
+            </span>
+            <h1 class="text-2xl font-semibold text-gray-800 mt-4">Welcome! Let's Get Started.</h1>
+            <p class="text-gray-600 mt-2">Select the repositories you'd like to analyze initially. You can always add more later.</p>
+        </div>
+
+        <div class="space-y-3 max-h-80 overflow-y-auto pr-2 mb-8">
+            <template x-for="repo in availableRepos" :key="repo.id">
+                <div class="repo-card" :class="{'selected': repo.selected}" @click="toggleSelection(repo.id)">
+                    <div>
+                         <p class="font-semibold text-gray-800" x-text="repo.name"></p>
+                         <p class="text-xs text-gray-500" x-text="repo.owner + '/' + repo.name"></p>
+                    </div>
+                    <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 ml-4"
+                         :class="repo.selected ? 'bg-indigo-600 border-indigo-600' : 'border-gray-300'">
+                        <svg x-show="repo.selected" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+         <a href="#"
+            class="w-full block text-center bg-indigo-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-200 ease-in-out shadow-lg hover:shadow-xl btn-glow-indigo"
+            :class="{ 'opacity-50 cursor-not-allowed': selectedCount === 0 }"
+            :disabled="selectedCount === 0"
+            title="Select at least one repository">
+             Finish Setup <span x-show="selectedCount > 0" x-text="`(${selectedCount} selected)`"></span>
+         </a>
+    </div>
+</body>
+</html>
