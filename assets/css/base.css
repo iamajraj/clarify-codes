@@ -1,0 +1,23 @@
+:root {
+  --clr-cream: #FAF8F1;
+  --clr-dark-text: #1f2937;
+  --clr-accent: #4338ca;
+  --clr-accent-light: #6366f1;
+  --clr-accent-lighter: #e0e7ff;
+  --clr-sidebar-bg: #ffffff;
+  --clr-sidebar-text: #4b5563;
+  --clr-sidebar-icon: #6b7280;
+  --clr-sidebar-hover-bg: #f3f4f6;
+  --clr-sidebar-active-bg: var(--clr-accent-lighter);
+  --clr-sidebar-active-text: var(--clr-accent);
+  --clr-success: #10b981;
+  --clr-warning: #f97316;
+  --clr-danger: #ef4444;
+  --clr-info: #3b82f6;
+  --clr-footer-text: #c7d2fe;
+  --clr-footer-link-hover: #ffffff;
+}
+
+html{
+  scroll-behavior: smooth;
+}
