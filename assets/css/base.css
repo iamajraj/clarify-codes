@@ -21,3 +21,11 @@
 html{
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--clr-cream);
+  color: var(--clr-dark-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
